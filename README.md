@@ -111,6 +111,8 @@ Here's an overview of the changes made to the original source code:
 - Added a feature to ignore ports in the domain url.
 ### main()
 - Just created a background context and passed it into monitorEndpoints()
+### other / misc
+- Created a shared httpClient for ease of implementation.
 
 
 
