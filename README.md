@@ -20,7 +20,7 @@ Go 1.18+ (modules enabled)
 
 
 ## Clone The Repo
-git clone https://github.com/your-org/endpoint-health-monitor.git endpoint-health-monitor
+`git clone https://github.com/your-org/endpoint-health-monitor.git endpoint-health-monitor`
 
 ## Build The Binary
 go build -o health-monitor .
