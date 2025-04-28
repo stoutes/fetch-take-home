@@ -1,0 +1,101 @@
+- body: '{"foo":"bar"}'
+  headers:
+    content-type: application/json
+  method: POST
+  name: sample body up
+  url: https://dev-sre-take-home-exercise-rubric.us-east-1.recruiting-public.fetchrewards.com/body
+- name: sample index up
+  url: https://dev-sre-take-home-exercise-rubric.us-east-1.recruiting-public.fetchrewards.com/
+- body: "{}"
+  headers:
+    content-type: application/json
+  method: POST
+  name: sample body down
+  url: https://dev-sre-take-home-exercise-rubric.us-east-1.recruiting-public.fetchrewards.com/body
+- name: sample error down
+  url: https://dev-sre-take-home-exercise-rubric.us-east-1.recruiting-public.fetchrewards.com/error
+
+
+#1 Echo JSON bodies via httpbin
+- name: sample body up
+  method: POST
+  url: https://httpbin.org/post
+  headers:
+    content-type: application/json
+  body: '{"foo":"bar"}'
+- name: sample echo anything
+  method: POST
+  url: https://httpbin.org/anything
+  headers:
+    content-type: application/json
+  body: '{"hello":"world"}'
+- name: sample delay 1s
+  method: GET
+  url: https://httpbin.org/delay/1
+
+#2 GET JSON placeholder
+- name: sample index up post
+  method: GET
+  url: https://jsonplaceholder.typicode.com/posts/1
+- name: sample index up user
+  method: GET
+  url: https://jsonplaceholder.typicode.com/users/1
+- name: sample index up comments
+  method: GET
+  url: https://jsonplaceholder.typicode.com/comments?postId=1
+
+#3 Echo empty and custom JSON via Postman Echo
+- name: sample body down empty
+  method: POST
+  url: https://postman-echo.com/post
+  headers:
+    content-type: application/json
+  body: '{}'
+- name: sample body down status
+  method: POST
+  url: https://postman-echo.com/post
+  headers:
+    content-type: application/json
+  body: '{"status":"ok"}'
+- name: sample body down number
+  method: POST
+  url: https://postman-echo.com/post
+  headers:
+    content-type: application/json
+  body: '{"number":12345}'
+
+#4 Error endpoints: various HTTP status codes
+- name: sample error down 500
+  method: GET
+  url: https://httpstat.us/500
+- name: sample error down 404
+  method: GET
+  url: https://httpstat.us/404
+- name: sample error down 418
+  method: GET
+  url: https://httpstat.us/418
+- name: sample error down timeout
+  method: GET
+  url: https://httpstat.us/200?sleep=600
+
+#5 Other/Misc test cases
+- name: sample body up
+  method: POST
+  url: https://httpbin.org:443/post
+  headers:
+    content-type: application/json
+  body: '{"foo":"bar"}'
+
+- name: sample body up empty
+  method: POST
+  url: https://postman-echo.com:443/post
+  headers:
+    content-type: application/json
+  body: '{}'
+
+#- name: malformed url
+#  method: POST
+#  url: https://postman - echo!äëīòú~.com:443/post
+ # headers:
+ #   content-type: application/json
+#  body: '{}'
