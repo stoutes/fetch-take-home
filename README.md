@@ -20,10 +20,10 @@ Go 1.18+ (modules enabled)
 
 
 ## Clone The Repo
-`git clone https://github.com/your-org/endpoint-health-monitor.git endpoint-health-monitor`
+`git clone https://github.com/stoutes/fetch-take-home.git endpoint-health-monitor`
 
 ## Build The Binary
-go build -o health-monitor .
+`go build -o endpoint-health-monitor .`
 
 ## Configuration
 
@@ -57,7 +57,7 @@ Example endpoints.yaml
 
 Run the tool by supplying the path to your YAML config:
 
-go run main.go sample.yaml
+`go run main.go sample.yaml`
 
 You should see log output as endpoints are checked, followed by a table:
 
